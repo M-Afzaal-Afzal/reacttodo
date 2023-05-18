@@ -18,6 +18,7 @@ function Login() {
   }
 
   useEffect(() => {
+    if (!google) return;
     /* global google */
     google.accounts.id.initialize({
       client_id: "89157473197-l17rek976eg035cem0eq66ko71662bp0.apps.googleusercontent.com",
@@ -31,7 +32,7 @@ function Login() {
   }, []);
 
   //if we have no user: show sign in button
-  // if we have a user: show the log out button 
+  // if we have a user: show the log out button
 
   return (
     <div className="App">
@@ -45,7 +46,7 @@ function Login() {
           <h3>{user.name}</h3>
           <h3>{user.email}</h3>
         </div>
-      }         
+      }
     </div>
   );
 }
